@@ -1,0 +1,10 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [],
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "key_value",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
+}

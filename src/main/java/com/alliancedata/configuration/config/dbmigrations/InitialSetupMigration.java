@@ -1,16 +1,14 @@
 package com.alliancedata.configuration.config.dbmigrations;
 
+import java.time.Instant;
+
 import com.alliancedata.configuration.domain.Authority;
 import com.alliancedata.configuration.domain.User;
 import com.alliancedata.configuration.security.AuthoritiesConstants;
-
 import com.github.mongobee.changeset.ChangeLog;
 import com.github.mongobee.changeset.ChangeSet;
-import org.springframework.data.mongodb.core.MongoTemplate;
 
-import java.time.Instant;
-import java.util.Arrays;
-import java.util.Collections;
+import org.springframework.data.mongodb.core.MongoTemplate;
 
 /**
  * Creates the initial database setup

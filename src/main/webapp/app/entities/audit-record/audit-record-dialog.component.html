@@ -1,0 +1,74 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myAuditRecordLabel">Create or edit a Audit Record</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!auditRecord.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="auditRecord.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_what">What</label>
+            <input type="text" class="form-control" name="what" id="field_what"
+                [(ngModel)]="auditRecord.what" required/>
+            <div [hidden]="!(editForm.controls.what?.dirty && editForm.controls.what?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.what?.errors?.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_when">When</label>
+            <div class="input-group">
+                <input id="field_when" type="text" class="form-control" name="when" ngbDatepicker  #whenDp="ngbDatepicker" [(ngModel)]="auditRecord.when"
+                required/>
+                <span class="input-group-append">
+                    <button type="button" class="btn btn-secondary" (click)="whenDp.toggle()"><i class="fa fa-calendar"></i></button>
+                </span>
+            </div>
+            <div [hidden]="!(editForm.controls.when?.dirty && editForm.controls.when?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.when?.errors?.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_why">Why</label>
+            <input type="text" class="form-control" name="why" id="field_why"
+                [(ngModel)]="auditRecord.why" required/>
+            <div [hidden]="!(editForm.controls.why?.dirty && editForm.controls.why?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.why?.errors?.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" for="field_where">Where</label>
+            <input type="text" class="form-control" name="where" id="field_where"
+                [(ngModel)]="auditRecord.where" required/>
+            <div [hidden]="!(editForm.controls.where?.dirty && editForm.controls.where?.invalid)">
+                <small class="form-text text-danger"
+                   [hidden]="!editForm.controls.where?.errors?.required">
+                   This field is required.
+                </small>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

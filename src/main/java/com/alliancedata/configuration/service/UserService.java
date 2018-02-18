@@ -1,15 +1,22 @@
 package com.alliancedata.configuration.service;
 
-import com.alliancedata.configuration.config.CacheConfiguration;
+import java.time.Instant;
+import java.time.temporal.ChronoUnit;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
+import java.util.stream.Collectors;
+
+import com.alliancedata.configuration.config.Constants;
 import com.alliancedata.configuration.domain.Authority;
 import com.alliancedata.configuration.domain.User;
 import com.alliancedata.configuration.repository.AuthorityRepository;
-import com.alliancedata.configuration.config.Constants;
 import com.alliancedata.configuration.repository.UserRepository;
 import com.alliancedata.configuration.security.AuthoritiesConstants;
 import com.alliancedata.configuration.security.SecurityUtils;
-import com.alliancedata.configuration.service.util.RandomUtil;
 import com.alliancedata.configuration.service.dto.UserDTO;
+import com.alliancedata.configuration.service.util.RandomUtil;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,11 +26,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import java.time.Instant;
-import java.time.temporal.ChronoUnit;
-import java.util.*;
-import java.util.stream.Collectors;
 
 /**
  * Service class for managing users.

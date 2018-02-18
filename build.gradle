@@ -189,6 +189,7 @@ dependencies {
     }
     compile "io.springfox:springfox-bean-validators"
     compile "org.mapstruct:mapstruct-jdk8:${mapstruct_version}"
+    runtime "de.flapdoodle.embed:de.flapdoodle.embed.mongo"
     testCompile "com.jayway.jsonpath:json-path"
     testCompile ("org.springframework.boot:spring-boot-starter-test") {
         exclude group: 'com.vaadin.external.google', module: 'android-json'

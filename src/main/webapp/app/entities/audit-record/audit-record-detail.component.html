@@ -1,0 +1,38 @@
+
+<div *ngIf="auditRecord">
+    <h2><span>Audit Record</span> {{auditRecord.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span>What</span></dt>
+        <dd>
+            <span>{{auditRecord.what}}</span>
+        </dd>
+        <dt><span>When</span></dt>
+        <dd>
+            <span>{{auditRecord.when | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span>Why</span></dt>
+        <dd>
+            <span>{{auditRecord.why}}</span>
+        </dd>
+        <dt><span>Where</span></dt>
+        <dd>
+            <span>{{auditRecord.where}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'audit-record/'+ auditRecord.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span> Edit</span>
+    </button>
+</div>
