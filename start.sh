@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
-./gradlew &
-yarn start &
+./gradlew &> gradle_out.txt &
+yarn start &> yarn_out.txt &
