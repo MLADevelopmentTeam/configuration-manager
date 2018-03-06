@@ -40,6 +40,9 @@ const ENTITY_STATES = [
         KeyRequestDeleteDialogComponent,
         KeyRequestDeletePopupComponent,
     ],
+    exports: [
+        KeyRequestComponent
+    ],
     providers: [
         KeyRequestService,
         KeyRequestPopupService,

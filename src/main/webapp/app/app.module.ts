@@ -15,7 +15,6 @@ import { ConfigurationAppRoutingModule} from './app-routing.module';
 import { ConfigurationHomeModule } from './home/home.module';
 import { ConfigurationAdminModule } from './admin/admin.module';
 import { ConfigurationAccountModule } from './account/account.module';
-import { ConfigurationEntityModule } from './entities/entity.module';
 import { PaginationConfig } from './blocks/config/uib-pagination.config';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import {
@@ -36,7 +35,6 @@ import {
         ConfigurationHomeModule,
         ConfigurationAdminModule,
         ConfigurationAccountModule,
-        ConfigurationEntityModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [

@@ -14,7 +14,7 @@ import {
     JhiLoginModalComponent,
     Principal,
     JhiTrackerService,
-    HasAnyAuthorityDirective,
+    HasAnyAuthorityDirective
 } from './';
 
 @NgModule({
@@ -24,7 +24,7 @@ import {
     ],
     declarations: [
         JhiLoginModalComponent,
-        HasAnyAuthorityDirective
+        HasAnyAuthorityDirective,
     ],
     providers: [
         LoginService,

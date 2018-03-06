@@ -12,7 +12,7 @@ import java.util.Objects;
  * A Note.
  */
 @Document(collection = "note")
-public class Note implements Serializable {
+public class Note extends AbstractAuditingEntity {
 
     private static final long serialVersionUID = 1L;
 

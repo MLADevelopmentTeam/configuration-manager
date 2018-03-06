@@ -10,7 +10,6 @@ import java.util.Objects;
 /**
  * A KeyValue.
  */
-@Document(collection = "key_value")
 public class KeyValue implements Serializable {
 
     private static final long serialVersionUID = 1L;

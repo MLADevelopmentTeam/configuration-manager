@@ -11,27 +11,15 @@ import java.util.Objects;
 /**
  * A Key.
  */
-@Document(collection = "key")
 public class Key implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
-    @Id
-    private String id;
 
     @NotNull
     @Field("name")
     private String name;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
     }
@@ -55,21 +43,20 @@ public class Key implements Serializable {
             return false;
         }
         Key key = (Key) o;
-        if (key.getId() == null || getId() == null) {
+        if (key.getName() == null || getName() == null) {
             return false;
         }
-        return Objects.equals(getId(), key.getId());
+        return Objects.equals(getName(), key.getName());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(getId());
+        return Objects.hashCode(getName());
     }
 
     @Override
     public String toString() {
         return "Key{" +
-            "id=" + getId() +
             ", name='" + getName() + "'" +
             "}";
     }
